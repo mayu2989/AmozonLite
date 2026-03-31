@@ -8,6 +8,6 @@ import java.util.Optional;
 
 @Repository
 public interface CartRepository extends JpaRepository<Cart,String> {
-    Optional<Cart> findByUserIdAndDeletedFalse(String userId);
+    Optional<Cart> findByUserIdAndIsDeletedFalse(String userId);
     Boolean existsByUserIdAndIsDeletedFalse(String userId);
 }
