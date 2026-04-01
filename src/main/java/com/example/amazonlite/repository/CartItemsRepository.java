@@ -8,10 +8,11 @@ import java.util.Optional;
 
 @Repository
 public interface CartItemsRepository extends JpaRepository<CartItems, String> {
-    List<CartItems> findCartId(String cartId);
+    List<CartItems> findByCartId(String cartId);
     Optional<CartItems> findByCartIdAndProductId(String cartId, String productId);
     Boolean existsByCartIdAndProductId(String cartId , String productId);
     Void deleteByCartIdAndProductId(String cartId,String productId);
     Void deleteByCartId(String cartId);
+
 }
 
