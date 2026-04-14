@@ -67,4 +67,8 @@ public class User implements UserDetails {
 
     @Override
     public boolean isEnabled() { return true; }
+    // in User.java — add this method
+    public String getActualUsername() {
+        return username;
+    }
 }
