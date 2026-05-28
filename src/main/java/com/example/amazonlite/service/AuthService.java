@@ -22,17 +22,14 @@ public class AuthService {
 
     public AuthResponse register(RegisterRequest request) {
 
-        // check email not already taken
         if (userRepository.existsByEmail(request.getEmail())) {
             throw new AlreadyExistsException("Email already registered");
         }
 
-        // check username not already taken
         if (userRepository.existsByUsername(request.getUsername())) {
             throw new AlreadyExistsException("Username already taken");
         }
 
-        // build user — hash password before saving
         User user = User.builder()
                 .username(request.getUsername())
                 .email(request.getEmail())
@@ -43,24 +40,22 @@ public class AuthService {
 
         userRepository.save(user);
 
-        // generate token and return
         String token = jwtUtil.generateToken(user.getEmail());
-        return new AuthResponse(token, user.getEmail(), user.getActualUsername());
+        return new AuthResponse(token, user.getEmail(), user.getActualUsername(),
+                user.getUserId(), user.getUserType().name());
     }
 
     public AuthResponse login(LoginRequest request) {
 
-        // find user by email
         User user = userRepository.findByEmail(request.getEmail())
                 .orElseThrow(() -> new ResourceNotFoundException("User not found"));
 
-        // verify password
         if (!passwordEncoder.matches(request.getPassword(), user.getPassword())) {
             throw new ResourceNotFoundException("Invalid password");
         }
 
-        // generate token and return
         String token = jwtUtil.generateToken(user.getEmail());
-        return new AuthResponse(token, user.getEmail(), user.getUsername());
+        return new AuthResponse(token, user.getEmail(), user.getActualUsername(),
+                user.getUserId(), user.getUserType().name());
     }
 }

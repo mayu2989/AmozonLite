@@ -9,4 +9,6 @@ public class AuthResponse {
     private String token;
     private String email;
     private String username;
+    private String userId;   // needed by frontend for /products/seller/{sellerId}
+    private String role;     // userType as string e.g. "BUYER" / "SELLER"
 }
