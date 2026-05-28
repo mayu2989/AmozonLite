@@ -11,7 +11,7 @@ public class CorsConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/api/**")
                 .allowedOrigins(
-                        "https://yourusername.github.io",
+                        "https://mayu2989.github.io/AmozonLite/",
                         "http://localhost:3000",   // for local dev
                         "http://localhost:5500"    // for Live Server
                 )
