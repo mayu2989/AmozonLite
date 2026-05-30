@@ -4,7 +4,7 @@
 
 [![Live API](https://img.shields.io/badge/API-Live%20on%20Render-brightgreen?style=for-the-badge)](https://amozonlite.onrender.com)
 [![Frontend](https://img.shields.io/badge/Frontend-GitHub%20Pages-blue?style=for-the-badge)](https://mayu2989.github.io/AmozonLite/)
-[![Java](https://img.shields.io/badge/Java-17-orange?style=for-the-badge&logo=java)](https://www.java.com)
+[![Java](https://img.shields.io/badge/Java-25-orange?style=for-the-badge&logo=java)](https://www.java.com)
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-brightgreen?style=for-the-badge&logo=springboot)](https://spring.io/projects/spring-boot)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Neon-blue?style=for-the-badge&logo=postgresql)](https://neon.tech)
 
@@ -16,6 +16,7 @@
 |---|---|
 | 🌐 Frontend | https://mayu2989.github.io/AmozonLite/ |
 | ⚙️ Backend API | https://amozonlite.onrender.com |
+| 📋 API Testing | Use Postman with `Authorization: Bearer <token>` — endpoints are JWT protected |
 
 > ⚠️ Hosted on Render free tier — first request may take ~30s to cold start.
 
@@ -77,7 +78,7 @@ AmazonLite is a backend-focused e-commerce REST API that simulates a real market
 
 | Layer | Technology |
 |---|---|
-| Language | Java 17 |
+| Language | Java 25 |
 | Framework | Spring Boot 3.x |
 | Security | Spring Security + JWT (jjwt 0.12.3) |
 | Database | PostgreSQL (Neon) |
